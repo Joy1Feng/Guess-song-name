@@ -1,0 +1,16 @@
+
+  <view class="container">
+    <view class="playMusic" bindtap="palyMusic">{{isPlay ? '暂停播放' : '开始播放'}}</view>
+    <view class="input">
+      <block wx:for="{{curInput}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view bindtap="clearInput" data-wpyclearinput-a="{{index}}">{{item}}</view>
+      </block>
+
+    </view>
+    <view class="show">
+      <block wx:for="{{curKeyword}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view bindtap="getWord" class="{{index === index1 ? 'active' : ''}}" data-wpygetword-a="{{item}}" data-wpygetword-b="{{index}}">{{item}}</view>
+      </block>
+    </view>
+    <button open-type="share" class="share">求救</button>
+  </view>
